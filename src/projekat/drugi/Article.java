@@ -42,4 +42,12 @@ public class Article {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

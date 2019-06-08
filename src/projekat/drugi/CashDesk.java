@@ -12,4 +12,16 @@ public class CashDesk {
     public void setCashDesk_id(int cashDesk_id) {
         this.cashDesk_id = cashDesk_id;
     }
+
+    public boolean scanShoppingBasket(ShoppingBasket shoppingBasket){
+        if(!shoppingBasket.isActive()){
+            return false;
+        } else {
+            // reset basket
+            shoppingBasket.setArticles(null);
+            shoppingBasket.setTotal_price(0.0);
+            shoppingBasket.setActive(false);
+            return true;
+        }
+    }
 }
