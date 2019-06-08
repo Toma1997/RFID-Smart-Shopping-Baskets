@@ -7,6 +7,9 @@ public class Article {
     private double price;
     private int [] barcode;
 
+    public Article() {
+
+    }
 
     public Article(String name, String category, double price, int[] barcode) {
         this.name = name;

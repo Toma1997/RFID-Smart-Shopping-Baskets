@@ -5,7 +5,7 @@
 <beans>
 
     <bean id="cashDesk" class="projekat.drugi.CashDesk">
-        <property name="cashDesk_id" value="1"/>
+        <property name="cashDesk_id" value="3"/>
     </bean>
 
 </beans>

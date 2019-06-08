@@ -4,6 +4,10 @@ public class ShoppingBasket {
 
     private int basket_id;
 
+    public ShoppingBasket() {
+
+    }
+
     public ShoppingBasket(int basket_id) {
         this.basket_id = basket_id;
     }
