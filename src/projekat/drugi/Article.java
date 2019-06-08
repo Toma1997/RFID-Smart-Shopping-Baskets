@@ -5,26 +5,26 @@ public class Article {
     private String name;
     private String category;
     private double price;
-    private int [] barcode;
+    private int rfid_num;
 
     public Article() {
 
     }
 
-    public Article(String name, String category, double price, int[] barcode) {
+    public Article(String name, String category, double price, int rfid_num) {
         this.name = name;
         this.category = category;
         this.price = price;
-        this.barcode = barcode;
+        this.rfid_num = rfid_num;
 
     }
 
-    public int[] getBarcode() {
-        return barcode;
+    public int getRfid_num() {
+        return this.rfid_num;
     }
 
-    public void setBarcode(int[] barcode) {
-        this.barcode = barcode;
+    public void setRfid_num(int rfid_num) {
+        this.rfid_num = rfid_num;
     }
 
     public String getName() {
