@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Stack;
 
 public class MarketServer {
 
@@ -57,6 +58,30 @@ public class MarketServer {
 
         articleBase.put("food", foodList);
         ///////////////////////////////////////
+
+        // 4. PRIMER SA INJECTION OBJEKTA U DRUGI OBJEKAT
+        CashWorker cashWorker1 = (CashWorker) context.getBean("cashWorker1");
+        desk1.setCashWorker(cashWorker1);
+
+        CashWorker cashWorker2 = (CashWorker) context.getBean("cashWorker2");
+        desk2.setCashWorker(cashWorker2);
+        ///////////////////////////////////////
+
+
+
+        // 6. PRIMER SA Autowired anotacijom za automatsko ozicavanje zrna
+        Stack<ShoppingBasket> basketsStack = new Stack<>();
+        ShoppingBasket shoppingBasket1 = (ShoppingBasket) context.getBean("");
+        basketsStack.push(shoppingBasket1);
+
+        ShoppingBasket shoppingBasket2 = (ShoppingBasket) context.getBean("");
+        basketsStack.push(shoppingBasket1);
+
+        ShoppingBasket shoppingBasket3 = (ShoppingBasket) context.getBean("");
+        basketsStack.push(shoppingBasket1);
+
+        ShoppingBasket shoppingBasket4 = (ShoppingBasket) context.getBean("");
+        basketsStack.push(shoppingBasket1);
 
 
 

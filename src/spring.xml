@@ -79,6 +79,18 @@
         <constructor-arg index="3" value="8"/>
     </bean>
 
+    <!-- 4. PRIMER SA SA INJECTION OBJEKTA U DRUGI OBJEKAT -->
+    <bean id="cashWorker1" class="projekat.drugi.CashWorker">
+        <property name="worker_id" value="1"/>
+        <property name="name" value="Marko"/>
+        <property name="experienceWithBaskets" value="200"/>
+    </bean>
+
+    <bean id="cashWorker2" class="projekat.drugi.CashWorker">
+        <property name="worker_id" value="2"/>
+        <property name="name" value="Nikola"/>
+        <property name="experienceWithBaskets" value="300"/>
+    </bean>
 
 
 </beans>

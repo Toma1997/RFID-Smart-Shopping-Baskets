@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed1920e8-dfef-4363-82b0-a3cb657cda74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/projekat/drugi/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projekat/drugi/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projekat/drugi/CashWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projekat/drugi/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projekat/drugi/CashDesk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projekat/drugi/CashDesk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projekat/drugi/MarketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projekat/drugi/MarketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projekat/drugi/ShoppingBasket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/projekat/drugi/ShoppingBasket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,20 +21,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/projekat/drugi/MarketServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,11 +37,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/projekat/drugi/Main.java" />
-        <option value="$PROJECT_DIR$/src/projekat/drugi/ShoppingBasket.java" />
         <option value="$PROJECT_DIR$/src/projekat/drugi/Article.java" />
+        <option value="$PROJECT_DIR$/src/projekat/drugi/User.java" />
+        <option value="$PROJECT_DIR$/src/projekat/drugi/ShoppingBasket.java" />
+        <option value="$PROJECT_DIR$/src/projekat/drugi/CashWorker.java" />
         <option value="$PROJECT_DIR$/src/projekat/drugi/CashDesk.java" />
-        <option value="$PROJECT_DIR$/src/projekat/drugi/MarketServer.java" />
         <option value="$PROJECT_DIR$/src/spring.xml" />
+        <option value="$PROJECT_DIR$/src/projekat/drugi/MarketServer.java" />
       </list>
     </option>
   </component>
@@ -74,17 +66,6 @@
               <item name="Mini projekat 2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mini projekat 2" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Mini projekat 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mini projekat 2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mini projekat 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mini projekat 2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="drugi" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -95,7 +76,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560098524907" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560102366194" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -151,7 +132,7 @@
       <workItem from="1560005613261" duration="1132000" />
       <workItem from="1560008848529" duration="1621000" />
       <workItem from="1560034272043" duration="3849000" />
-      <workItem from="1560088471868" duration="4933000" />
+      <workItem from="1560088471868" duration="8723000" />
     </task>
     <task id="LOCAL-00001" summary="added spring.xml file">
       <created>1560004473863</created>
@@ -164,11 +145,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14433000" />
+    <option name="totallyTimeSpent" value="18223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19669509" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -245,21 +225,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/projekat/drugi/CashDesk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#112#113#0" expanded="true" />
-            <element signature="e#146#147#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/projekat/drugi/ShoppingBasket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" column="86" selection-start-line="80" selection-start-column="86" selection-end-line="80" selection-end-column="86" />
+        <state relative-caret-position="595">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
           <folding>
             <element signature="e#644#645#0" expanded="true" />
             <element signature="e#676#677#0" expanded="true" />
@@ -275,21 +244,60 @@
             <element signature="e#1090#1091#0" expanded="true" />
             <element signature="e#1135#1136#0" expanded="true" />
             <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1265#1266#0" expanded="true" />
+            <element signature="e#1315#1316#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projekat/drugi/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projekat/drugi/CashWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#448#449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projekat/drugi/CashDesk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#112#113#0" expanded="true" />
+            <element signature="e#146#147#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/spring.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="43" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
+        <state relative-caret-position="706">
+          <caret line="91" column="55" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/projekat/drugi/MarketServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+        <state relative-caret-position="332">
+          <caret line="61" column="57" lean-forward="true" selection-start-line="61" selection-start-column="57" selection-end-line="61" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
