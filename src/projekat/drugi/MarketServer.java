@@ -22,9 +22,9 @@ public class MarketServer {
         // simulacija baze podataka artikala
         HashMap<String, ArrayList<Article>> articleBase = new HashMap<>();
 
+        // 2. PRIMER SA CONSTRUCTOR INJECTION PREKO TYPE SVOJSTVA
         ArrayList<Article> cosmeticList = new ArrayList<>();
 
-        // 2. PRIMER SA CONSTRUCTOR INJECTION PREKO TYPE SVOJSTVA
         Article article1 = (Article) context.getBean("article1");
         cosmeticList.add(article1);
 
@@ -36,9 +36,28 @@ public class MarketServer {
 
         Article article4 = (Article) context.getBean("article4");
         cosmeticList.add(article4);
-        ///////////////////////////////////////
 
         articleBase.put("cosmetics", cosmeticList);
+        ///////////////////////////////////////
+
+        // 3. PRIMER SA CONSTRUCTOR INJECTION PREKO INDEX SVOJSTVA
+        ArrayList<Article> foodList = new ArrayList<>();
+
+        Article article5 = (Article) context.getBean("article5");
+        cosmeticList.add(article5);
+
+        Article article6 = (Article) context.getBean("article6");
+        cosmeticList.add(article6);
+
+        Article article7 = (Article) context.getBean("article7");
+        cosmeticList.add(article7);
+
+        Article article8 = (Article) context.getBean("article8");
+        cosmeticList.add(article8);
+
+        articleBase.put("food", foodList);
+        ///////////////////////////////////////
+
 
 
 

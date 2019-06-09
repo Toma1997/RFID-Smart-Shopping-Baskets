@@ -50,6 +50,35 @@
         <constructor-arg type="int" value="4"/>
     </bean>
 
+    <!-- 3. PRIMER SA CONSTRUCTOR INJECTION PREKO INDEX SVOJSTVA -->
+    <bean id="article5" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Bacon"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="1.20"/>
+        <constructor-arg index="3" value="5"/>
+    </bean>
+
+    <bean id="article6" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Chicken"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="9.75"/>
+        <constructor-arg index="3" value="6"/>
+    </bean>
+
+    <bean id="article7" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Brockoli"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="1.35"/>
+        <constructor-arg index="3" value="7"/>
+    </bean>
+
+    <bean id="article8" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Cheese"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="2.0"/>
+        <constructor-arg index="3" value="8"/>
+    </bean>
+
 
 
 </beans>

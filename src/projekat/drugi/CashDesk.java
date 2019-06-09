@@ -8,7 +8,6 @@ public class CashDesk {
         return cashDesk_id;
     }
 
-    // setter injection
     public void setCashDesk_id(int cashDesk_id) {
         this.cashDesk_id = cashDesk_id;
     }
