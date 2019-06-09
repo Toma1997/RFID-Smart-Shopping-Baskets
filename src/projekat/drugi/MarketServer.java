@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Main {
+public class MarketServer {
 
     public static void main(String[] args) {
 
