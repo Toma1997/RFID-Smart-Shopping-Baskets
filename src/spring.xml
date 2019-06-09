@@ -4,8 +4,52 @@
 
 <beans>
 
-    <bean id="cashDesk" class="projekat.drugi.CashDesk">
+    <!-- 1. PRIMEER SA SETTER INJECTION -->
+    <bean id="cashDesk1" class="projekat.drugi.CashDesk">
         <property name="cashDesk_id" value="1"/>
     </bean>
+
+    <bean id="cashDesk2" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="2"/>
+    </bean>
+
+    <bean id="cashDesk3" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="3"/>
+    </bean>
+
+    <bean id="cashDesk4" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="4"/>
+    </bean>
+
+    <!-- 2. PRIMER SA CONSTRUCTOR INJECTION PREKO TYPE SVOJSTVA -->
+    <bean id="article1" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="Nivea shampoo"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="8.5"/>
+        <constructor-arg type="int" value="1"/>
+    </bean>
+
+    <bean id="article2" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="STR8 gel"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="3.45"/>
+        <constructor-arg type="int" value="2"/>
+    </bean>
+
+    <bean id="article3" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="Sensodyne tooth brush"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="2.15"/>
+        <constructor-arg type="int" value="3"/>
+    </bean>
+
+    <bean id="article4" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="STR8 aftershave gel"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="3.0"/>
+        <constructor-arg type="int" value="4"/>
+    </bean>
+
+
 
 </beans>

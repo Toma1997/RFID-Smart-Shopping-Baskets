@@ -4,8 +4,20 @@
 
 <beans>
 
-    <bean id="cashDesk" class="projekat.drugi.CashDesk">
+    <bean id="cashDesk1" class="projekat.drugi.CashDesk">
         <property name="cashDesk_id" value="1"/>
+    </bean>
+
+    <bean id="cashDesk2" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="2"/>
+    </bean>
+
+    <bean id="cashDesk3" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="3"/>
+    </bean>
+
+    <bean id="cashDesk4" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="4"/>
     </bean>
 
 </beans>

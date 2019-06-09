@@ -11,6 +11,7 @@ public class Article {
 
     }
 
+    // constructor injection preko type svojstva
     public Article(String name, String category, double price, int rfid_num) {
         this.name = name;
         this.category = category;

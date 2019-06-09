@@ -17,7 +17,7 @@ public class CashDesk {
         if(!shoppingBasket.isActive()){
             return false;
         } else {
-            // reset basket
+            // resetuj korpu
             shoppingBasket.setArticles(null);
             shoppingBasket.setTotal_price(0.0);
             shoppingBasket.setActive(false);

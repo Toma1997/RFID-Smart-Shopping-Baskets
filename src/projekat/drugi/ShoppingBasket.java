@@ -53,8 +53,8 @@ public class ShoppingBasket {
     public boolean scanArticle(Article article, ArrayList<Article> articleBase){
         for(Article a : this.articles){
             if(a.getRfid_num() == article.getRfid_num()){
-                this.articles.remove(a); // take article out from basket
-                articleBase.add(article); // get back in market system
+                this.articles.remove(a); // izvucen artikal iz korpe
+                articleBase.add(article); // i vracen u sistem marketa
                 this.total_price -= a.getPrice();
 
                 if(this.articles.isEmpty()){
@@ -64,20 +64,20 @@ public class ShoppingBasket {
             }
         }
 
-        // article is not in the basket so check if it is in whole system
+        // ako artikal nije u korpi, proveri jel u sistemu
         for(Article a : articleBase){
             if(a.getRfid_num() == article.getRfid_num()){
 
                 if(this.articles.isEmpty()){
                     this.isActive = true;
                 }
-                this.articles.add(a); // putted article into the basket
-                articleBase.remove(article); // removed from the system
+                this.articles.add(a); // ubacen artikal u korpu
+                articleBase.remove(article); // i izbacen iz sistema
                 this.total_price += a.getPrice();
                 return true;
             }
         }
 
-        return false; // article is not in the system
+        return false; // artikal ne postoji ni u sistemu / donesen iz druge prodavnice
     }
 }
