@@ -4,6 +4,7 @@
 
 <beans>
 
+    <!-- 1. PRIMEER SA SETTER INJECTION -->
     <bean id="cashDesk1" class="projekat.drugi.CashDesk">
         <property name="cashDesk_id" value="1"/>
     </bean>
@@ -12,12 +13,98 @@
         <property name="cashDesk_id" value="2"/>
     </bean>
 
+    <!-- 2. PRIMER SA CONSTRUCTOR INJECTION PREKO TYPE SVOJSTVA -->
+    <bean id="article1" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="Nivea shampoo"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="8.5"/>
+        <constructor-arg type="int" value="1"/>
+    </bean>
+
+    <bean id="article2" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="STR8 gel"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="3.45"/>
+        <constructor-arg type="int" value="2"/>
+    </bean>
+
+    <bean id="article3" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="Sensodyne tooth brush"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="2.15"/>
+        <constructor-arg type="int" value="3"/>
+    </bean>
+
+    <bean id="article4" class="projekat.drugi.Article">
+        <constructor-arg type="java.lang.String" value="STR8 aftershave gel"/>
+        <constructor-arg type="java.lang.String" value="cosmetics"/>
+        <constructor-arg type="double" value="3.0"/>
+        <constructor-arg type="int" value="4"/>
+    </bean>
+
+    <!-- 3. PRIMER SA CONSTRUCTOR INJECTION PREKO INDEX SVOJSTVA -->
+    <bean id="article5" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Bacon"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="1.20"/>
+        <constructor-arg index="3" value="5"/>
+    </bean>
+
+    <bean id="article6" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Chicken"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="9.75"/>
+        <constructor-arg index="3" value="6"/>
+    </bean>
+
+    <bean id="article7" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Brockoli"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="1.35"/>
+        <constructor-arg index="3" value="7"/>
+    </bean>
+
+    <bean id="article8" class="projekat.drugi.Article">
+        <constructor-arg index="0" value="Cheese"/>
+        <constructor-arg index="1" value="food"/>
+        <constructor-arg index="2" value="2.0"/>
+        <constructor-arg index="3" value="8"/>
+    </bean>
+
+    <!-- 4. PRIMER SA SA INJECTION OBJEKTA U DRUGI OBJEKAT -->
+    <bean id="cashWorker1" class="projekat.drugi.CashWorker">
+        <property name="worker_id" value="1"/>
+        <property name="name" value="Marko"/>
+        <property name="experienceWithBaskets" value="200"/>
+    </bean>
+
+    <bean id="cashWorker2" class="projekat.drugi.CashWorker">
+        <property name="worker_id" value="2"/>
+        <property name="name" value="Nikola"/>
+        <property name="experienceWithBaskets" value="300"/>
+    </bean>
+
+    <!-- 5. PRIMER SA SA INJECTION OBJEKTA U DRUGI OBJEKAT PREKO INNER BEAN KONCEPTA -->
     <bean id="cashDesk3" class="projekat.drugi.CashDesk">
         <property name="cashDesk_id" value="3"/>
+        <property name="cashWorker">
+            <bean class="projekat.drugi.CashWorker">
+                <property name="worker_id" value="3"/>
+                <property name="name" value="Zeljana"/>
+                <property name="experienceWithBaskets" value="115"/>
+            </bean>
+        </property>
     </bean>
 
     <bean id="cashDesk4" class="projekat.drugi.CashDesk">
         <property name="cashDesk_id" value="4"/>
+        <property name="cashWorker">
+            <bean class="projekat.drugi.CashWorker">
+                <property name="worker_id" value="4"/>
+                <property name="name" value="Ana"/>
+                <property name="experienceWithBaskets" value="400"/>
+            </bean>
+        </property>
     </bean>
 
 </beans>

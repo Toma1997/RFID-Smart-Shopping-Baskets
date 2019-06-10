@@ -13,14 +13,6 @@
         <property name="cashDesk_id" value="2"/>
     </bean>
 
-    <bean id="cashDesk3" class="projekat.drugi.CashDesk">
-        <property name="cashDesk_id" value="3"/>
-    </bean>
-
-    <bean id="cashDesk4" class="projekat.drugi.CashDesk">
-        <property name="cashDesk_id" value="4"/>
-    </bean>
-
     <!-- 2. PRIMER SA CONSTRUCTOR INJECTION PREKO TYPE SVOJSTVA -->
     <bean id="article1" class="projekat.drugi.Article">
         <constructor-arg type="java.lang.String" value="Nivea shampoo"/>
@@ -92,5 +84,27 @@
         <property name="experienceWithBaskets" value="300"/>
     </bean>
 
+    <!-- 5. PRIMER SA SA INJECTION OBJEKTA U DRUGI OBJEKAT PREKO INNER BEAN KONCEPTA -->
+    <bean id="cashDesk3" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="3"/>
+        <property name="cashWorker">
+            <bean class="projekat.drugi.CashWorker">
+                <property name="worker_id" value="3"/>
+                <property name="name" value="Zeljana"/>
+                <property name="experienceWithBaskets" value="115"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="cashDesk4" class="projekat.drugi.CashDesk">
+        <property name="cashDesk_id" value="4"/>
+        <property name="cashWorker">
+            <bean class="projekat.drugi.CashWorker">
+                <property name="worker_id" value="4"/>
+                <property name="name" value="Ana"/>
+                <property name="experienceWithBaskets" value="400"/>
+            </bean>
+        </property>
+    </bean>
 
 </beans>

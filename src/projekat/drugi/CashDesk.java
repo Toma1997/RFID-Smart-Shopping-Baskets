@@ -32,4 +32,14 @@ public class CashDesk {
             return true;
         }
     }
+
+    @Override
+    public String toString() {
+        return "CashDesk{" +
+                "cashDesk_id=" + cashDesk_id +
+                ", cashWorker id =" + cashWorker.getWorker_id() +
+                ", cashWorker name =  " + cashWorker.getName() +
+                ", cashWorker experience " + cashWorker.getExperienceWithBaskets() +
+                '}';
+    }
 }

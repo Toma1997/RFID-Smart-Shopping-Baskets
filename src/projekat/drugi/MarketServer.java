@@ -16,8 +16,6 @@ public class MarketServer {
         // 1. PRIMER SA SETTER INJECTION
         CashDesk desk1 = (CashDesk) context.getBean("cashDesk1");
         CashDesk desk2 = (CashDesk) context.getBean("cashDesk2");
-        CashDesk desk3 = (CashDesk) context.getBean("cashDesk3");
-        CashDesk desk4 = (CashDesk) context.getBean("cashDesk4");
         /////////////////////////////////
 
         // simulacija baze podataka artikala
@@ -67,7 +65,10 @@ public class MarketServer {
         desk2.setCashWorker(cashWorker2);
         ///////////////////////////////////////
 
-
+        // 5. PRIMER SA INJECTION OBJEKTA U DRUGI OBJEKAT PREKO INNER BEAN KONCEPTA
+        CashDesk desk3 = (CashDesk) context.getBean("cashDesk3");
+        CashDesk desk4 = (CashDesk) context.getBean("cashDesk4");
+        ///////////////////////////////////////
 
         // 6. PRIMER SA Autowired anotacijom za automatsko ozicavanje zrna
         Stack<ShoppingBasket> basketsStack = new Stack<>();

@@ -8,7 +8,6 @@ public class ShoppingBasket {
     private ArrayList<Article> articles;
     private double total_price;
     private boolean isActive;
-    private User basketUser;
 
     public ShoppingBasket() {
         this.articles = new ArrayList<>();
@@ -49,14 +48,6 @@ public class ShoppingBasket {
 
     public void setActive(boolean active) {
         isActive = active;
-    }
-
-    public User getBasketUser() {
-        return basketUser;
-    }
-
-    public void setBasketUser(User basketUser) {
-        this.basketUser = basketUser;
     }
 
     public boolean scanArticle(Article article, ArrayList<Article> articleBase){
