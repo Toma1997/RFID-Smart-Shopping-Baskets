@@ -83,12 +83,9 @@ public class MarketServer {
 
         ShoppingBasket shoppingBasket4 = (ShoppingBasket) context.getBean("shoppingBasket4");
         basketsStack.push(shoppingBasket1);
+        ////////////////////////////////////////////////////////////////////
 
-        System.out.println(shoppingBasket1.getArticlesList().getArticles().size());
-        System.out.println(shoppingBasket2.getArticlesList().getArticles().size());
-        System.out.println(shoppingBasket3.getArticlesList().getArticles().size());
-        System.out.println(shoppingBasket4.getArticlesList().getArticles().size());
-
+        // TREBA IMPLEMENTIRATI SIMULACIJU KUPOVINE KORISNIKA ISPOD
     }
 
 }

@@ -13,18 +13,6 @@ public class ShoppingBasket {
     private double total_price;
     private boolean isActive;
 
-    public ShoppingBasket() {
-        this.articlesList = new ArticlesList();
-    }
-
-    /* @Autowired
-    public ShoppingBasket(int basket_id, ArticlesList articlesList, int total_price, boolean isActive) {
-        this.basket_id = basket_id;
-        this.articlesList = articlesList;
-        this.total_price = total_price;
-        this.isActive = isActive;
-    } */
-
     public int getBasket_id() {
         return basket_id;
     }
