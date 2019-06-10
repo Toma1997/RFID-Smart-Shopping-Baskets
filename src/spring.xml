@@ -2,6 +2,8 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
+
+
 <beans>
 
     <!-- 1. PRIMEER SA SETTER INJECTION -->
@@ -12,6 +14,7 @@
     <bean id="cashDesk2" class="projekat.drugi.CashDesk">
         <property name="cashDesk_id" value="2"/>
     </bean>
+    <!--///////////////////////////////////////////////-->
 
     <!-- 2. PRIMER SA CONSTRUCTOR INJECTION PREKO TYPE SVOJSTVA -->
     <bean id="article1" class="projekat.drugi.Article">
@@ -41,6 +44,7 @@
         <constructor-arg type="double" value="3.0"/>
         <constructor-arg type="int" value="4"/>
     </bean>
+    <!--///////////////////////////////////////////////-->
 
     <!-- 3. PRIMER SA CONSTRUCTOR INJECTION PREKO INDEX SVOJSTVA -->
     <bean id="article5" class="projekat.drugi.Article">
@@ -70,6 +74,7 @@
         <constructor-arg index="2" value="2.0"/>
         <constructor-arg index="3" value="8"/>
     </bean>
+    <!--///////////////////////////////////////////////-->
 
     <!-- 4. PRIMER SA SA INJECTION OBJEKTA U DRUGI OBJEKAT -->
     <bean id="cashWorker1" class="projekat.drugi.CashWorker">
@@ -83,6 +88,7 @@
         <property name="name" value="Nikola"/>
         <property name="experienceWithBaskets" value="300"/>
     </bean>
+    <!--///////////////////////////////////////////////-->
 
     <!-- 5. PRIMER SA SA INJECTION OBJEKTA U DRUGI OBJEKAT PREKO INNER BEAN KONCEPTA -->
     <bean id="cashDesk3" class="projekat.drugi.CashDesk">
@@ -105,6 +111,47 @@
                 <property name="experienceWithBaskets" value="400"/>
             </bean>
         </property>
+    </bean>
+    <!--///////////////////////////////////////////////-->
+
+    <!-- 6. PRIMER SA AUTOWIRED ANOTACIJOM ZA SETTER METODU-->
+    <bean id="shoppingBasket1" class="projekat.drugi.ShoppingBasket">
+        <property name="basket_id" value="1"/>
+        <property name="total_price" value="0.20"/>
+        <property name="active" value="false"/>
+    </bean>
+
+    <bean id="shoppingBasket2" class="projekat.drugi.ShoppingBasket">
+        <property name="basket_id" value="2"/>
+        <property name="total_price" value="0.20"/>
+        <property name="active" value="false"/>
+    </bean>
+
+    <bean id="shoppingBasket3" class="projekat.drugi.ShoppingBasket">
+        <property name="basket_id" value="3"/>
+        <property name="total_price" value="0.20"/>
+        <property name="active" value="false"/>
+    </bean>
+
+    <bean id="shoppingBasket4" class="projekat.drugi.ShoppingBasket">
+        <property name="basket_id" value="4"/>
+        <property name="total_price" value="0.20"/>
+        <property name="active" value="false"/>
+    </bean>
+
+    <bean id="articlesList" class="projekat.drugi.ArticlesList">
+        <property name="articles">
+            <list>
+                <ref bean="article9"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="article9" class="projekat.drugi.Article">
+        <property name="name" value="Plastic bags"/>
+        <property name="category" value="bags"/>
+        <property name="price" value="0.40"/>
+        <property name="rfid_num" value="9"/>
     </bean>
 
 </beans>

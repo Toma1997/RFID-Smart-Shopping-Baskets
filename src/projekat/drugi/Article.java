@@ -50,4 +50,14 @@ public class Article {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", rfid_num=" + rfid_num +
+                '}';
+    }
 }

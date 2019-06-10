@@ -26,7 +26,9 @@ public class CashDesk {
             return false;
         } else {
             // resetuj korpu
-            shoppingBasket.setArticles(null);
+            ArticlesList temp = shoppingBasket.getArticlesList();
+            temp.setArticles(null);
+            shoppingBasket.setArticlesList(temp);
             shoppingBasket.setTotal_price(0.0);
             shoppingBasket.setActive(false);
             return true;

@@ -1,6 +1,6 @@
 package projekat.drugi;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class MarketServer {
 
     public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         // 1. PRIMER SA SETTER INJECTION
         CashDesk desk1 = (CashDesk) context.getBean("cashDesk1");
@@ -72,20 +72,22 @@ public class MarketServer {
 
         // 6. PRIMER SA Autowired anotacijom za automatsko ozicavanje zrna
         Stack<ShoppingBasket> basketsStack = new Stack<>();
-        ShoppingBasket shoppingBasket1 = (ShoppingBasket) context.getBean("");
+        ShoppingBasket shoppingBasket1 = (ShoppingBasket) context.getBean("shoppingBasket1");
         basketsStack.push(shoppingBasket1);
 
-        ShoppingBasket shoppingBasket2 = (ShoppingBasket) context.getBean("");
+        ShoppingBasket shoppingBasket2 = (ShoppingBasket) context.getBean("shoppingBasket2");
         basketsStack.push(shoppingBasket1);
 
-        ShoppingBasket shoppingBasket3 = (ShoppingBasket) context.getBean("");
+        ShoppingBasket shoppingBasket3 = (ShoppingBasket) context.getBean("shoppingBasket3");
         basketsStack.push(shoppingBasket1);
 
-        ShoppingBasket shoppingBasket4 = (ShoppingBasket) context.getBean("");
+        ShoppingBasket shoppingBasket4 = (ShoppingBasket) context.getBean("shoppingBasket4");
         basketsStack.push(shoppingBasket1);
 
-
-
+        System.out.println(shoppingBasket1.getArticlesList().getArticles().size());
+        System.out.println(shoppingBasket2.getArticlesList().getArticles().size());
+        System.out.println(shoppingBasket3.getArticlesList().getArticles().size());
+        System.out.println(shoppingBasket4.getArticlesList().getArticles().size());
 
     }
 

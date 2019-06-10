@@ -1,37 +1,36 @@
 package projekat.drugi;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingBasket {
 
     private int basket_id;
-    private ArrayList<Article> articles;
+    //@Autowired
+    private ArticlesList articlesList;
     private double total_price;
     private boolean isActive;
 
     public ShoppingBasket() {
-        this.articles = new ArrayList<>();
-        this.total_price = 0.0;
-        this.isActive = false;
+        this.articlesList = new ArticlesList();
     }
 
-    public ShoppingBasket(int basket_id, ArrayList<Article> articles, int total_price, boolean isActive) {
+    /* @Autowired
+    public ShoppingBasket(int basket_id, ArticlesList articlesList, int total_price, boolean isActive) {
         this.basket_id = basket_id;
-        this.articles = articles;
+        this.articlesList = articlesList;
         this.total_price = total_price;
-        this.isActive = false;
-    }
+        this.isActive = isActive;
+    } */
 
     public int getBasket_id() {
         return basket_id;
     }
 
-    public ArrayList<Article> getArticles() {
-        return articles;
-    }
-
-    public void setArticles(ArrayList<Article> articles) {
-        this.articles = articles;
+    public void setBasket_id(int basket_id) {
+        this.basket_id = basket_id;
     }
 
     public double getTotal_price() {
@@ -40,6 +39,15 @@ public class ShoppingBasket {
 
     public void setTotal_price(double total_price) {
         this.total_price = total_price;
+    }
+
+    public ArticlesList getArticlesList() {
+        return articlesList;
+    }
+
+    @Autowired
+    public void setArticlesList(ArticlesList articlesList) {
+        this.articlesList = articlesList;
     }
 
     public boolean isActive() {
@@ -51,13 +59,15 @@ public class ShoppingBasket {
     }
 
     public boolean scanArticle(Article article, ArrayList<Article> articleBase){
-        for(Article a : this.articles){
+        for(Article a : this.articlesList.getArticles()){
             if(a.getRfid_num() == article.getRfid_num()){
-                this.articles.remove(a); // izvucen artikal iz korpe
+                List<Article> temp = this.articlesList.getArticles();
+                temp.remove(a); // izvucen artikal iz korpe
+                this.articlesList.setArticles(temp);
                 articleBase.add(article); // i vracen u sistem marketa
                 this.total_price -= a.getPrice();
 
-                if(this.articles.isEmpty()){
+                if(this.articlesList.getArticles().isEmpty()){
                     this.isActive = false;
                 }
                 return true;
@@ -68,10 +78,12 @@ public class ShoppingBasket {
         for(Article a : articleBase){
             if(a.getRfid_num() == article.getRfid_num()){
 
-                if(this.articles.isEmpty()){
+                if(this.articlesList.getArticles().isEmpty()){
                     this.isActive = true;
                 }
-                this.articles.add(a); // ubacen artikal u korpu
+                List<Article> temp = this.articlesList.getArticles();
+                temp.add(a); // ubacen artikal u korpu
+                this.articlesList.setArticles(temp);
                 articleBase.remove(article); // i izbacen iz sistema
                 this.total_price += a.getPrice();
                 return true;
@@ -80,4 +92,5 @@ public class ShoppingBasket {
 
         return false; // artikal ne postoji ni u sistemu / donesen iz druge prodavnice
     }
+
 }
