@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class MarketServer {
@@ -70,7 +71,7 @@ public class MarketServer {
         CashDesk desk4 = (CashDesk) context.getBean("cashDesk4");
         ///////////////////////////////////////
 
-        // 6. PRIMER SA Autowired anotacijom za automatsko ozicavanje zrna
+        // 6. PRIMER SA Autowired ANOTACIJOM ZA AUTOMATSKO OZICAVANJE ZRNA
         Stack<ShoppingBasket> basketsStack = new Stack<>();
         ShoppingBasket shoppingBasket1 = (ShoppingBasket) context.getBean("shoppingBasket1");
         basketsStack.push(shoppingBasket1);
@@ -85,7 +86,25 @@ public class MarketServer {
         basketsStack.push(shoppingBasket1);
         ////////////////////////////////////////////////////////////////////
 
-        // TREBA IMPLEMENTIRATI SIMULACIJU KUPOVINE KORISNIKA ISPOD
+        // Simulacija kupovine sa pametnim RFID korpama
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Welcome to our supermarket, take your shopping bakset!");
+        ShoppingBasket takenBasket = basketsStack.pop();
+
+        String choosenCategory = "";
+        do {
+            System.out.println("Choose category of articles in which you are interested in:");
+            System.out.println("- food");
+            System.out.println("- cosmetics");
+
+            choosenCategory = input.nextLine();
+        } while(choosenCategory.equals("food") || choosenCategory.equals("cosmetics"));
+
+        ArrayList<Article> currentList = articleBase.get(choosenCategory);
+
+        System.out.println("Choose article you want to buy: ");
+
     }
 
 }
