@@ -1,10 +1,8 @@
 package projekat.drugi;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -96,23 +94,19 @@ public class MarketServer {
 
         // Simulacija kupovine sa pametnim RFID korpama
         Scanner input = new Scanner(System.in);
-
         System.out.println("Welcome to our supermarket, take your shopping bakset!");
         ShoppingBasket takenBasket = basketsStack.pop();
 
         do {
-
             // prikaz dosadasnje kupovine
             System.out.println("For now, in your basket you have:");
             if(takenBasket.getArticlesList().getArticles().size() > 0){
                 for (Article a : takenBasket.getArticlesList().getArticles()) {
                     System.out.println(a.toString());
                 }
-
             } else {
                 System.out.println("Nothing!");
             }
-
             String choosenCategory = "";
             do {
                 System.out.println("Choose category of articles in which you are interested in:");
@@ -124,48 +118,36 @@ public class MarketServer {
 
             // odabrana je kategorija
             ArrayList<Article> currentList = articleBase.get(choosenCategory);
-
             System.out.println("Choose article you want to buy by entering name: ");
-
             for (Article a : currentList) {
                 System.out.println(a.toString());
             }
-
             Article takenArticle = null;
-
             String articleName = input.nextLine().trim();
             for (Article a : currentList) {
                 if(a.getName().equals(articleName)){
                     takenArticle = a;
                 }
             }
-
             takenBasket.scanArticle(takenArticle, currentList);
-
             System.out.println("Do you still want to buy something? y/n");
-
         } while (input.nextLine().equals("y"));
 
         do{
             if(takenBasket.getArticlesList().getArticles().size() > 0){
                 System.out.println("Do you want to take back something? y/n");
-
                 if(input.nextLine().equals("y")){
                     System.out.println("Choose article you want to take out by entering name:");
-
                     for (Article a : takenBasket.getArticlesList().getArticles()) {
                         System.out.println(a.toString());
                     }
-
                     Article takenArticle = null;
-
                     String articleName = input.nextLine().trim();
                     for (Article a : takenBasket.getArticlesList().getArticles()) {
                         if(a.getName().equals(articleName)){
                             takenArticle = a;
                         }
                     }
-
                     takenBasket.scanArticle(takenArticle, articleBase.get(takenArticle.getCategory()));
                 } else {
                     break;
@@ -173,8 +155,6 @@ public class MarketServer {
             } else {
                 break;
             }
-
-
         } while (true);
 
         // zavrsena kupovina, odlazak na kasu
