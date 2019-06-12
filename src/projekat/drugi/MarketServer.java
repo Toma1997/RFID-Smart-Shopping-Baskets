@@ -1,8 +1,10 @@
 package projekat.drugi;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -21,6 +23,7 @@ public class MarketServer {
 
         // simulacija baze podataka artikala
         HashMap<String, ArrayList<Article>> articleBase = new HashMap<>();
+        articleBase.put("bags", new ArrayList<>());
 
         // 2. PRIMER SA CONSTRUCTOR INJECTION PREKO TYPE SVOJSTVA
         ArrayList<Article> cosmeticList = new ArrayList<>();
@@ -143,6 +146,37 @@ public class MarketServer {
 
         } while (input.nextLine().equals("y"));
 
+        do{
+            if(takenBasket.getArticlesList().getArticles().size() > 0){
+                System.out.println("Do you want to take back something? y/n");
+
+                if(input.nextLine().equals("y")){
+                    System.out.println("Choose article you want to take out by entering name:");
+
+                    for (Article a : takenBasket.getArticlesList().getArticles()) {
+                        System.out.println(a.toString());
+                    }
+
+                    Article takenArticle = null;
+
+                    String articleName = input.nextLine().trim();
+                    for (Article a : takenBasket.getArticlesList().getArticles()) {
+                        if(a.getName().equals(articleName)){
+                            takenArticle = a;
+                        }
+                    }
+
+                    takenBasket.scanArticle(takenArticle, articleBase.get(takenArticle.getCategory()));
+                } else {
+                    break;
+                }
+            } else {
+                break;
+            }
+
+
+        } while (true);
+
         // zavrsena kupovina, odlazak na kasu
         CashDesk choosenDesk = null;
         do {
@@ -160,7 +194,9 @@ public class MarketServer {
         } while (choosenDesk == null);
 
         // placanje svega iz korpe
+        double bill = takenBasket.getTotal_price();
         if(choosenDesk.scanShoppingBasket(takenBasket)){
+            System.out.printf("Your bill is %.2f euros\n", bill);
             System.out.println("Thank you for buying in our supermarket!");
         } else {
             System.out.println("We hope you will buy something next time.");
