@@ -120,25 +120,25 @@
     <bean id="shoppingBasket1" class="projekat.drugi.ShoppingBasket">
         <property name="basket_id" value="1"/>
         <property name="total_price" value="0.20"/>
-        <property name="active" value="false"/>
+        <property name="active" value="true"/>
     </bean>
 
     <bean id="shoppingBasket2" class="projekat.drugi.ShoppingBasket">
         <property name="basket_id" value="2"/>
         <property name="total_price" value="0.20"/>
-        <property name="active" value="false"/>
+        <property name="active" value="true"/>
     </bean>
 
     <bean id="shoppingBasket3" class="projekat.drugi.ShoppingBasket">
         <property name="basket_id" value="3"/>
         <property name="total_price" value="0.20"/>
-        <property name="active" value="false"/>
+        <property name="active" value="true"/>
     </bean>
 
     <bean id="shoppingBasket4" class="projekat.drugi.ShoppingBasket">
         <property name="basket_id" value="4"/>
         <property name="total_price" value="0.20"/>
-        <property name="active" value="false"/>
+        <property name="active" value="true"/>
     </bean>
 
     <bean id="articlesList" class="projekat.drugi.ArticlesList">

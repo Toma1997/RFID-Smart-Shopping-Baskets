@@ -44,31 +44,36 @@ public class MarketServer {
         ArrayList<Article> foodList = new ArrayList<>();
 
         Article article5 = (Article) context.getBean("article5");
-        cosmeticList.add(article5);
+        foodList.add(article5);
 
         Article article6 = (Article) context.getBean("article6");
-        cosmeticList.add(article6);
+        foodList.add(article6);
 
         Article article7 = (Article) context.getBean("article7");
-        cosmeticList.add(article7);
+        foodList.add(article7);
 
         Article article8 = (Article) context.getBean("article8");
-        cosmeticList.add(article8);
+        foodList.add(article8);
 
         articleBase.put("food", foodList);
         ///////////////////////////////////////
 
+        ArrayList<CashDesk> desks = new ArrayList<>();
         // 4. PRIMER SA INJECTION OBJEKTA U DRUGI OBJEKAT
         CashWorker cashWorker1 = (CashWorker) context.getBean("cashWorker1");
         desk1.setCashWorker(cashWorker1);
+        desks.add(desk1);
 
         CashWorker cashWorker2 = (CashWorker) context.getBean("cashWorker2");
         desk2.setCashWorker(cashWorker2);
+        desks.add(desk2);
         ///////////////////////////////////////
 
         // 5. PRIMER SA INJECTION OBJEKTA U DRUGI OBJEKAT PREKO INNER BEAN KONCEPTA
         CashDesk desk3 = (CashDesk) context.getBean("cashDesk3");
+        desks.add(desk3);
         CashDesk desk4 = (CashDesk) context.getBean("cashDesk4");
+        desks.add(desk4);
         ///////////////////////////////////////
 
         // 6. PRIMER SA Autowired ANOTACIJOM ZA AUTOMATSKO OZICAVANJE ZRNA
@@ -77,13 +82,13 @@ public class MarketServer {
         basketsStack.push(shoppingBasket1);
 
         ShoppingBasket shoppingBasket2 = (ShoppingBasket) context.getBean("shoppingBasket2");
-        basketsStack.push(shoppingBasket1);
+        basketsStack.push(shoppingBasket2);
 
         ShoppingBasket shoppingBasket3 = (ShoppingBasket) context.getBean("shoppingBasket3");
-        basketsStack.push(shoppingBasket1);
+        basketsStack.push(shoppingBasket3);
 
         ShoppingBasket shoppingBasket4 = (ShoppingBasket) context.getBean("shoppingBasket4");
-        basketsStack.push(shoppingBasket1);
+        basketsStack.push(shoppingBasket4);
         ////////////////////////////////////////////////////////////////////
 
         // Simulacija kupovine sa pametnim RFID korpama
@@ -92,19 +97,73 @@ public class MarketServer {
         System.out.println("Welcome to our supermarket, take your shopping bakset!");
         ShoppingBasket takenBasket = basketsStack.pop();
 
-        String choosenCategory = "";
         do {
-            System.out.println("Choose category of articles in which you are interested in:");
-            System.out.println("- food");
-            System.out.println("- cosmetics");
 
-            choosenCategory = input.nextLine();
-        } while(choosenCategory.equals("food") || choosenCategory.equals("cosmetics"));
+            // prikaz dosadasnje kupovine
+            System.out.println("For now, in your basket you have:");
+            if(takenBasket.getArticlesList().getArticles().size() > 0){
+                for (Article a : takenBasket.getArticlesList().getArticles()) {
+                    System.out.println(a.toString());
+                }
 
-        ArrayList<Article> currentList = articleBase.get(choosenCategory);
+            } else {
+                System.out.println("Nothing!");
+            }
 
-        System.out.println("Choose article you want to buy: ");
+            String choosenCategory = "";
+            do {
+                System.out.println("Choose category of articles in which you are interested in:");
+                System.out.println("- food");
+                System.out.println("- cosmetics");
 
+                choosenCategory = input.nextLine().trim();
+            } while (!choosenCategory.equals("food") && !choosenCategory.equals("cosmetics"));
+
+            // odabrana je kategorija
+            ArrayList<Article> currentList = articleBase.get(choosenCategory);
+
+            System.out.println("Choose article you want to buy by entering name: ");
+
+            for (Article a : currentList) {
+                System.out.println(a.toString());
+            }
+
+            Article takenArticle = null;
+
+            String articleName = input.nextLine().trim();
+            for (Article a : currentList) {
+                if(a.getName().equals(articleName)){
+                    takenArticle = a;
+                }
+            }
+
+            takenBasket.scanArticle(takenArticle, currentList);
+
+            System.out.println("Do you still want to buy something? y/n");
+
+        } while (input.nextLine().equals("y"));
+
+        // zavrsena kupovina, odlazak na kasu
+        CashDesk choosenDesk = null;
+        do {
+            System.out.println("Choose cash desk where you want to pay with entering cash desk id:");
+            for (CashDesk desk : desks) {
+                System.out.println(desk.toString());
+            }
+
+            int desk_id = input.nextInt();
+            for (CashDesk desk : desks) {
+                if(desk.getCashDesk_id() == desk_id){
+                    choosenDesk = desk;
+                }
+            }
+        } while (choosenDesk == null);
+
+        // placanje svega iz korpe
+        if(choosenDesk.scanShoppingBasket(takenBasket)){
+            System.out.println("Thank you for buying in our supermarket!");
+        } else {
+            System.out.println("We hope you will buy something next time.");
+        }
     }
-
 }

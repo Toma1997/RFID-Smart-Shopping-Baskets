@@ -31,6 +31,7 @@ public class CashDesk {
             shoppingBasket.setArticlesList(temp);
             shoppingBasket.setTotal_price(0.0);
             shoppingBasket.setActive(false);
+            this.cashWorker.setExperienceWithBaskets(this.cashWorker.getExperienceWithBaskets()+1);
             return true;
         }
     }
