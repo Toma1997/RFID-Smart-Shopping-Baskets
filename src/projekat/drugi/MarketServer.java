@@ -181,5 +181,6 @@ public class MarketServer {
         } else {
             System.out.println("We hope you will buy something next time.");
         }
+        basketsStack.push(takenBasket); // put back shopping basket
     }
 }
